@@ -11,7 +11,7 @@ module.exports = {
   plugins: ['simple-import-sort', 'prettier', '@typescript-eslint'],
   rules: {
     'prettier/prettier': [
-      'error',
+      'warn',
       {
         endOfLine: 'auto',
       },

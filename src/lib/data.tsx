@@ -1,15 +1,5 @@
-import {
-  FaCss3Alt,
-  FaHtml5,
-  FaJava,
-  FaJs,
-  FaReact,
-} from 'react-icons/fa';
-import {
-  SiApachemaven,
-  SiSpringboot,
-  SiTailwindcss,
-} from 'react-icons/si';
+import { FaCss3Alt, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa';
+import { SiApachemaven, SiSpringboot, SiTailwindcss } from 'react-icons/si';
 
 export const links = [
   {
