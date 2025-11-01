@@ -41,7 +41,7 @@ function findContextBefore(pos: number) {
 }
 
 function findAllTechnologies() {
-  const results: {context: string; techs: string[]}[] = [];
+  const results: { context: string; techs: string[] }[] = [];
   const re = /technologies\s*:\s*\[/g;
   let m;
   while ((m = re.exec(src))) {

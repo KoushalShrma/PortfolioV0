@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   verification: {
     google: siteConfig.googleSiteVerificationId,
   },
-    openGraph: {
+  openGraph: {
     type: 'website',
     locale: 'en_US',
     url: siteConfig.url,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: `${siteConfig.url}/images/metaimg.png`,
         width: 1200,
         height: 630,
-          alt: 'Koushal Sharma - Java Developer',
+        alt: 'Koushal Sharma - Java Developer',
       },
     ],
   },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
-    other: {
+  other: {
     author: 'Koushal Sharma',
     email: 'koushalshrma@gmail.com',
     copyright: 'Koushal Sharma 2025',
@@ -69,7 +69,14 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   // This helps catch if any import is undefined and causing the React "Element type is invalid" error.
   // (Server-side log)
   // eslint-disable-next-line no-console
-  console.log('check: ThemeProvider', typeof ThemeProvider, 'ActiveSectionProvider', typeof ActiveSectionProvider, 'Toaster', typeof Toaster);
+  console.log(
+    'check: ThemeProvider',
+    typeof ThemeProvider,
+    'ActiveSectionProvider',
+    typeof ActiveSectionProvider,
+    'Toaster',
+    typeof Toaster
+  );
 
   // Structured Data for SEO (personalized for Koushal Sharma)
   const structuredData = {
@@ -78,7 +85,8 @@ const RootLayout = ({ children }: PropsWithChildren) => {
     name: 'Koushal Sharma',
     alternateName: 'Koushal Sharma',
     jobTitle: 'Java Developer (Fresher)',
-    description: 'Koushal Sharma is a fresher Java developer with training and certifications in Java and software engineering fundamentals.',
+    description:
+      'Koushal Sharma is a fresher Java developer with training and certifications in Java and software engineering fundamentals.',
     url: siteConfig.url,
     image: `${siteConfig.url}/images/profile.jpg`,
     email: 'koushalshrma@gmail.com',
@@ -102,7 +110,8 @@ const RootLayout = ({ children }: PropsWithChildren) => {
     offers: {
       '@type': 'Service',
       name: 'Software Development & Training',
-      description: 'Entry-level software development, internships, and project contributions.',
+      description:
+        'Entry-level software development, internships, and project contributions.',
       provider: {
         '@type': 'Person',
         name: 'Koushal Sharma',
@@ -113,7 +122,8 @@ const RootLayout = ({ children }: PropsWithChildren) => {
     hasOccupation: {
       '@type': 'Occupation',
       name: 'Junior Software Developer',
-      description: 'Entry-level Java developer focused on backend services and APIs.',
+      description:
+        'Entry-level Java developer focused on backend services and APIs.',
       occupationLocation: {
         '@type': 'Country',
         name: 'United Kingdom',

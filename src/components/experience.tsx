@@ -66,7 +66,10 @@ export const Experience = () => {
                 <div className="flex flex-wrap gap-2">
                   {Array.from(new Set(technologies.map((t) => t.trim()))).map(
                     (tech) => (
-                      <div key={tech} className="rounded-full border px-3 py-1 text-sm ">
+                      <div
+                        key={tech}
+                        className="rounded-full border px-3 py-1 text-sm "
+                      >
                         {tech}
                       </div>
                     )

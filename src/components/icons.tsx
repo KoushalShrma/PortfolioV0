@@ -12,12 +12,12 @@ import {
   Linkedin,
   LucideProps,
   Moon,
+  Send,
+  Sparkles,
   Star,
   Sun,
   Twitter,
   X,
-  Send,
-  Sparkles,
 } from 'lucide-react';
 
 export const Icons = {
@@ -154,7 +154,10 @@ export const Icons = {
   ),
   maven: (props: LucideProps) => (
     <svg viewBox="0 0 48 48" fill="none" {...props}>
-      <path fill="currentColor" d="M8 35h32v3H8v-3zm0-5h32v3H8v-3zm0-5h32v3H8v-3z" />
+      <path
+        fill="currentColor"
+        d="M8 35h32v3H8v-3zm0-5h32v3H8v-3zm0-5h32v3H8v-3z"
+      />
     </svg>
   ),
   docker: (props: LucideProps) => (

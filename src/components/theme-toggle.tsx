@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes';
 
-import { Button, ButtonProps } from '@/components/button';
+import { ButtonProps } from '@/components/button';
 import { Icons } from '@/components/icons';
 import { cn } from '@/lib/utils';
 
@@ -16,7 +16,7 @@ export const ThemeToggle = ({ className }: ButtonProps) => {
   return (
     <button
       className={cn(
-        'inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-input bg-transparent transition-colors hover:bg-muted/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        'border-input hover:bg-muted/80 focus-visible:ring-ring inline-flex size-11 cursor-pointer items-center justify-center rounded-full border bg-transparent transition-colors focus-visible:outline-none focus-visible:ring-2',
         className
       )}
       aria-label="theme toggle"

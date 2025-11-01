@@ -1,10 +1,14 @@
-import { Icons } from '@/components/icons';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaDocker, FaJava } from 'react-icons/fa';
 import {
-  SiTailwindcss,
-  SiSpringboot,
-  SiMysql,
+  FaCss3Alt,
+  FaHtml5,
+  FaJava,
+  FaJs,
+  FaReact,
+} from 'react-icons/fa';
+import {
   SiApachemaven,
+  SiSpringboot,
+  SiTailwindcss,
 } from 'react-icons/si';
 
 export const links = [
@@ -52,8 +56,8 @@ export const projectsDataRaw = [
     ],
     links: {
       preview: 'https://initspring.vercel.app/',
-  github: '',
-  githubApi: '',
+      github: '',
+      githubApi: '',
     },
   },
   {
@@ -75,8 +79,8 @@ export const projectsDataRaw = [
     ],
     links: {
       preview: 'https://koushal.tech/email-agent',
-  github: '',
-  githubApi: '',
+      github: '',
+      githubApi: '',
     },
   },
   {
@@ -99,8 +103,8 @@ export const projectsDataRaw = [
     ],
     links: {
       preview: 'https://github.com/KoushalShrma/LERNnow',
-  github: 'https://github.com/KoushalShrma/LERNnow',
-  githubApi: '',
+      github: 'https://github.com/KoushalShrma/LERNnow',
+      githubApi: '',
     },
   },
   {
@@ -123,8 +127,8 @@ export const projectsDataRaw = [
     ],
     links: {
       preview: 'https://github.com/KoushalShrma/FindASpot',
-  github: '',
-  githubApi: '',
+      github: '',
+      githubApi: '',
     },
   },
   {
@@ -134,8 +138,8 @@ export const projectsDataRaw = [
       'A fully Functional MERN Stack Web Application. Having responsive behaviour, smooth touch UI with API Integration. With Admin and Petitioner Panel, along with new features such as Login in with QR Code, Signing In, Setting Global Threshold.',
     technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
     links: {
-  preview: '',
-  github: '',
+      preview: '',
+      github: '',
       githubApi: 'https://api.github.com/repos/Yashkapure06',
     },
   },
@@ -395,15 +399,17 @@ export const projectsDataRaw = [
       githubApi: 'https://api.github.com/repos/Yashkapure06',
     },
   },
- ] as const;
+] as const;
 
 // Normalize project technologies: trim and dedupe while preserving order
 const normalizeTechs = (arr: readonly string[]) =>
   Array.from(
-    arr.map((t) => t.trim()).reduce((acc: string[], cur) => {
-      if (!acc.includes(cur)) acc.push(cur);
-      return acc;
-    }, [])
+    arr
+      .map((t) => t.trim())
+      .reduce((acc: string[], cur) => {
+        if (!acc.includes(cur)) acc.push(cur);
+        return acc;
+      }, [])
   );
 
 export const projectsData = projectsDataRaw.map((p) => ({
@@ -430,7 +436,7 @@ export const experiencesDataRaw = [
     title: '2023 — Bringing Ideas to Life',
     company: 'Web Development Journey',
     description:
-      'With Java as my foundation, I discovered the visual world of web development. HTML, CSS, and JavaScript became my canvas. I learned that great software isn\'t just functional—it\'s intuitive and beautiful. React.js and Tailwind CSS empowered me to build interfaces that users actually enjoy. This was when I realized: code is a bridge between imagination and reality.',
+      "With Java as my foundation, I discovered the visual world of web development. HTML, CSS, and JavaScript became my canvas. I learned that great software isn't just functional—it's intuitive and beautiful. React.js and Tailwind CSS empowered me to build interfaces that users actually enjoy. This was when I realized: code is a bridge between imagination and reality.",
     period: '2023',
     technologies: [
       'HTML',
@@ -445,7 +451,7 @@ export const experiencesDataRaw = [
     title: '2024 — Mastering the Backend',
     company: 'Full Stack Evolution',
     description:
-      'Frontend was exciting, but I craved deeper challenges. I immersed myself in Spring Boot, learning to architect robust backend systems. Building RESTful APIs, implementing JWT authentication, designing database schemas with Hibernate and MySQL—this is where I found my stride. I wasn\'t just writing code anymore; I was engineering scalable, secure solutions that could handle real-world demands.',
+      "Frontend was exciting, but I craved deeper challenges. I immersed myself in Spring Boot, learning to architect robust backend systems. Building RESTful APIs, implementing JWT authentication, designing database schemas with Hibernate and MySQL—this is where I found my stride. I wasn't just writing code anymore; I was engineering scalable, secure solutions that could handle real-world demands.",
     period: '2024',
     technologies: [
       'Spring Boot',
@@ -461,7 +467,7 @@ export const experiencesDataRaw = [
     title: 'Building Real Solutions',
     company: 'Project-Based Learning',
     description:
-      'Theory is powerful, but execution is everything. I built Learn Now—a learning platform with structured educational paths, secure authentication, and robust REST APIs. Then came Find-A-Spot—a smart parking system with real-time booking and tracking. These weren\'t just projects; they were proof that I could take an idea from concept to deployment, solving real problems with clean, maintainable code.',
+      "Theory is powerful, but execution is everything. I built Learn Now—a learning platform with structured educational paths, secure authentication, and robust REST APIs. Then came Find-A-Spot—a smart parking system with real-time booking and tracking. These weren't just projects; they were proof that I could take an idea from concept to deployment, solving real problems with clean, maintainable code.",
     period: '2024 - 2025',
     technologies: [
       'Spring Boot',
@@ -476,7 +482,7 @@ export const experiencesDataRaw = [
     title: 'July - August 2025 — Professional Training',
     company: 'Full Stack Java Developer Trainee',
     description:
-      'I pushed myself through an intensive training program that demanded excellence. Built enterprise-grade applications with Spring Boot, Hibernate, and React.js. Mastered advanced patterns like DTOs and layered architecture. When complex bugs appeared, I was the one teammates turned to. My dedication to clean code and problem-solving didn\'t go unnoticed—I earned recognition not just for what I built, but for how I built it.',
+      "I pushed myself through an intensive training program that demanded excellence. Built enterprise-grade applications with Spring Boot, Hibernate, and React.js. Mastered advanced patterns like DTOs and layered architecture. When complex bugs appeared, I was the one teammates turned to. My dedication to clean code and problem-solving didn't go unnoticed—I earned recognition not just for what I built, but for how I built it.",
     period: 'July - August 2025',
     technologies: [
       'Spring Boot',
@@ -492,7 +498,7 @@ export const experiencesDataRaw = [
     title: '2025 — Proving My Worth',
     company: 'Certifications & Growth',
     description:
-      'Talk is cheap. I backed up my skills with certifications from IIT Kharagpur (NPTEL) and J.P. Morgan Chase (Forage), validating my expertise in Java and DBMS. But I didn\'t stop there—I sharpened my problem-solving with daily DSA practice, contributed to open-source projects on GitHub, and kept pushing my limits. Success isn\'t given; it\'s earned through relentless effort.',
+      "Talk is cheap. I backed up my skills with certifications from IIT Kharagpur (NPTEL) and J.P. Morgan Chase (Forage), validating my expertise in Java and DBMS. But I didn't stop there—I sharpened my problem-solving with daily DSA practice, contributed to open-source projects on GitHub, and kept pushing my limits. Success isn't given; it's earned through relentless effort.",
     period: '2025',
     technologies: [
       'Java',
@@ -508,7 +514,7 @@ export const experiencesDataRaw = [
     title: 'Today — Hungry for More',
     company: 'The Journey Continues',
     description:
-      'I\'m not here to settle. As an emerging Full Stack Java Developer, I\'m constantly learning new frameworks, writing cleaner code, and staying ahead of industry trends. Every challenge is an opportunity to improve. Every project is a chance to prove myself. My goal is crystal clear: build fast, scalable, and impactful applications that matter. The grind never stops, and neither does my ambition.',
+      "I'm not here to settle. As an emerging Full Stack Java Developer, I'm constantly learning new frameworks, writing cleaner code, and staying ahead of industry trends. Every challenge is an opportunity to improve. Every project is a chance to prove myself. My goal is crystal clear: build fast, scalable, and impactful applications that matter. The grind never stops, and neither does my ambition.",
     period: 'Present',
     technologies: [
       'Java',
@@ -520,7 +526,7 @@ export const experiencesDataRaw = [
       'Continuous Learning',
     ],
   },
- ] as const;
+] as const;
 
 // Export cleaned experiencesData with deduped/trimmed technologies
 export const experiencesData = experiencesDataRaw.map((e) => ({

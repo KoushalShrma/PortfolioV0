@@ -32,7 +32,7 @@ export const Skills = () => {
         {duplicatedSkills.map(({ icon }, index) => (
           <div
             key={`skill-${index}`}
-            className="flex flex-shrink-0 items-center justify-center"
+            className="flex shrink-0 items-center justify-center"
           >
             {icon}
           </div>

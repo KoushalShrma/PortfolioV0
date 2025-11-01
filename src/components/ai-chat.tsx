@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+
 import { Icons } from '@/components/icons';
 
 interface Message {
@@ -200,13 +201,13 @@ export const AIChat = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-5 left-0 right-0 z-50 mx-auto sm:bottom-10"
+            className="fixed inset-x-0 bottom-5 z-50 mx-auto sm:bottom-10"
           >
             <div className="container mx-auto px-4">
               <div className="sm:bg-background/80 mx-auto flex max-w-[800px] items-center gap-2 sm:rounded-full sm:border sm:px-2 sm:py-3 sm:backdrop-blur-sm">
                 <button
                   onClick={() => setIsExpanded(true)}
-                  className="text-muted-foreground hover:text-foreground flex w-full items-center gap-3 rounded-full bg-white/80 px-6 py-3 backdrop-blur-sm transition-colors dark:bg-gray-900/80 sm:bg-transparent sm:backdrop-blur-none"
+                  className="text-muted-foreground hover:text-foreground flex w-full items-center gap-3 rounded-full bg-white/80 px-6 py-3 backdrop-blur-sm transition-colors sm:bg-transparent sm:backdrop-blur-none dark:bg-gray-900/80"
                 >
                   <Icons.sparkles className="size-5 shrink-0" />
                   <span className="text-sm">
@@ -276,49 +277,80 @@ export const AIChat = () => {
               <div className="mx-auto max-w-4xl space-y-6 pb-8">
                 {messages.map((message, index) => {
                   // Parse message content to identify emphasis patterns
-                  const renderStyledContent = (content: string, isUser: boolean) => {
+                  const renderStyledContent = (
+                    content: string,
+                    isUser: boolean
+                  ) => {
                     // Remove markdown formatting
                     const cleanContent = content
                       .replace(/\*\*/g, '') // Remove **
-                      .replace(/\*/g, '')   // Remove *
-                      .replace(/`/g, '')    // Remove `
-                      .replace(/#/g, '');   // Remove #
-                    
+                      .replace(/\*/g, '') // Remove *
+                      .replace(/`/g, '') // Remove `
+                      .replace(/#/g, ''); // Remove #
+
                     const words = cleanContent.split(' ');
                     return words.map((word, i) => {
                       // Keywords that should be emphasized (larger and bold)
                       const emphasisKeywords = [
-                        'Java', 'Spring', 'Boot', 'React', 'MySQL', 'Hibernate', 
-                        'Backend', 'Frontend', 'Developer', 'Projects', 'Skills',
-                        'Experience', 'Full', 'Stack',
-                        'REST', 'API', 'JWT', 'Database', 'Authentication',
-                        'Training', 'Certification', 'IIT', 'Kharagpur',
-                        'connect', 'hire', 'portfolio', 'work', 'contact',
-                        'Hello', 'Hi', 'Thanks', 'Thank', 'What', 'How', 'Can'
+                        'Java',
+                        'Spring',
+                        'Boot',
+                        'React',
+                        'MySQL',
+                        'Hibernate',
+                        'Backend',
+                        'Frontend',
+                        'Developer',
+                        'Projects',
+                        'Skills',
+                        'Experience',
+                        'Full',
+                        'Stack',
+                        'REST',
+                        'API',
+                        'JWT',
+                        'Database',
+                        'Authentication',
+                        'Training',
+                        'Certification',
+                        'IIT',
+                        'Kharagpur',
+                        'connect',
+                        'hire',
+                        'portfolio',
+                        'work',
+                        'contact',
+                        'Hello',
+                        'Hi',
+                        'Thanks',
+                        'Thank',
+                        'What',
+                        'How',
+                        'Can',
                       ];
-                      
-                      const isEmphasized = emphasisKeywords.some(keyword => 
+
+                      const isEmphasized = emphasisKeywords.some((keyword) =>
                         word.toLowerCase().includes(keyword.toLowerCase())
                       );
-                      
+
                       // Check if word is Koushal or Sharma for special gradient color
-                      const isName = word.toLowerCase().includes('koushal') || 
-                                     word.toLowerCase().includes('sharma');
-                      
+                      const isName =
+                        word.toLowerCase().includes('koushal') ||
+                        word.toLowerCase().includes('sharma');
+
                       return (
                         <span key={i}>
                           <span
                             className={`${
                               isName
-                                ? 'text-3xl font-bold bg-gradient-to-r from-rose-700 to-pink-600 bg-clip-text text-transparent' // Gradient like typewriter (same in both modes)
+                                ? 'bg-gradient-to-r from-rose-700 to-pink-600 bg-clip-text text-3xl font-bold text-transparent' // Gradient like typewriter (same in both modes)
                                 : isEmphasized
                                   ? 'text-3xl font-bold text-gray-900 dark:text-white' // Black in light mode, white in dark mode
                                   : 'text-xl text-gray-800 dark:text-gray-200' // Darker gray in light mode, light gray in dark mode
                             } transition-all`}
                           >
                             {word}
-                          </span>
-                          {' '}
+                          </span>{' '}
                         </span>
                       );
                     });
@@ -334,7 +366,10 @@ export const AIChat = () => {
                     >
                       <div className="max-w-[85%] py-4">
                         <div className="whitespace-pre-wrap leading-relaxed">
-                          {renderStyledContent(message.content, message.role === 'user')}
+                          {renderStyledContent(
+                            message.content,
+                            message.role === 'user'
+                          )}
                         </div>
                       </div>
                     </motion.div>
@@ -347,7 +382,7 @@ export const AIChat = () => {
                     animate={{ opacity: 1 }}
                     className="flex justify-start"
                   >
-                    <div className="border border-white/20 bg-white/90 dark:bg-gray-800/90 max-w-[85%] rounded-2xl px-6 py-4 shadow-lg backdrop-blur-md">
+                    <div className="max-w-[85%] rounded-2xl border border-white/20 bg-white/90 px-6 py-4 shadow-lg backdrop-blur-md dark:bg-gray-800/90">
                       <div className="flex space-x-2">
                         <div className="size-2 animate-bounce rounded-full bg-purple-600"></div>
                         <div className="size-2 animate-bounce rounded-full bg-purple-600 [animation-delay:0.2s]"></div>
@@ -370,7 +405,10 @@ export const AIChat = () => {
                         placeholder="Your Name"
                         value={contactForm.name}
                         onChange={(e) =>
-                          setContactForm({ ...contactForm, name: e.target.value })
+                          setContactForm({
+                            ...contactForm,
+                            name: e.target.value,
+                          })
                         }
                         className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 dark:border-gray-600 dark:bg-gray-700"
                       />
@@ -379,7 +417,10 @@ export const AIChat = () => {
                         placeholder="Your Email"
                         value={contactForm.email}
                         onChange={(e) =>
-                          setContactForm({ ...contactForm, email: e.target.value })
+                          setContactForm({
+                            ...contactForm,
+                            email: e.target.value,
+                          })
                         }
                         className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 dark:border-gray-600 dark:bg-gray-700"
                       />
@@ -387,7 +428,10 @@ export const AIChat = () => {
                         placeholder="Reason to connect"
                         value={contactForm.reason}
                         onChange={(e) =>
-                          setContactForm({ ...contactForm, reason: e.target.value })
+                          setContactForm({
+                            ...contactForm,
+                            reason: e.target.value,
+                          })
                         }
                         rows={3}
                         className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 dark:border-gray-600 dark:bg-gray-700"
@@ -413,12 +457,12 @@ export const AIChat = () => {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 100, opacity: 0 }}
               transition={{ delay: 0.3, type: 'spring' }}
-              className="fixed bottom-5 left-0 right-0 z-[70] mx-auto sm:bottom-10"
+              className="fixed inset-x-0 bottom-5 z-[70] mx-auto sm:bottom-10"
             >
               <div className="container mx-auto px-4">
                 <div className="sm:bg-background/80 mx-auto flex max-w-[800px] items-center gap-2 sm:rounded-full sm:border sm:px-2 sm:py-3 sm:backdrop-blur-sm">
                   {!showContactForm ? (
-                    <div className="flex w-full items-center gap-3 rounded-full bg-white/90 px-6 py-3 backdrop-blur-md dark:bg-gray-900/90 sm:bg-transparent sm:backdrop-blur-none">
+                    <div className="flex w-full items-center gap-3 rounded-full bg-white/90 px-6 py-3 backdrop-blur-md sm:bg-transparent sm:backdrop-blur-none dark:bg-gray-900/90">
                       <div className="relative flex-1">
                         <input
                           ref={chatInputRef}

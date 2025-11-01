@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Button } from '@/components/button';
 import { Icons } from '@/components/icons';
@@ -11,8 +11,6 @@ import { useSectionInView } from '@/hooks/use-section-in-view';
 
 export const Intro = () => {
   const { ref } = useSectionInView('Home');
-
-  
 
   return (
     <section
@@ -67,7 +65,7 @@ export const Intro = () => {
         <span className="bg-gradient-to-r from-rose-700 to-pink-600 bg-clip-text text-transparent">
           Koushal Sharma
         </span>
-        <span className="block mt-2 text-4xl font-medium text-muted-foreground">
+        <span className="text-muted-foreground mt-2 block text-4xl font-medium">
           Backend Engineer with Full-Stack Expertise.
         </span>
       </motion.h1>
@@ -82,12 +80,11 @@ export const Intro = () => {
         }}
         className="text-muted-foreground max-w-xl"
       >
-        I am a recent Java developer trainee with certifications in Java,
-        data structures, and software engineering fundamentals. I enjoy
-        building reliable backend services with Java, learning frameworks
-        like Spring Boot, and practicing clean code and testing. I am eager to
-        apply my training in practical projects and continue growing as an
-        engineer.
+        I am a recent Java developer trainee with certifications in Java, data
+        structures, and software engineering fundamentals. I enjoy building
+        reliable backend services with Java, learning frameworks like Spring
+        Boot, and practicing clean code and testing. I am eager to apply my
+        training in practical projects and continue growing as an engineer.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
@@ -112,22 +109,38 @@ export const Intro = () => {
           </a>
         </Button>
         <Button variant="outline" size="icon" asChild>
-          <Link href="https://www.linkedin.com/in/koushalshrma" aria-label="Linkedin" target="_blank">
+          <Link
+            href="https://www.linkedin.com/in/koushalshrma"
+            aria-label="Linkedin"
+            target="_blank"
+          >
             <Icons.linkedin className="size-5" />
           </Link>
         </Button>
         <Button variant="outline" size="icon" asChild>
-          <Link href="https://github.com/KoushalShrma" aria-label="Github" target="_blank">
+          <Link
+            href="https://github.com/KoushalShrma"
+            aria-label="Github"
+            target="_blank"
+          >
             <Icons.github className="size-5" />
           </Link>
         </Button>
         <Button variant="outline" size="icon" asChild>
-          <Link href="https://www.instagram.com/koushalshrma/" aria-label="Instagram" target="_blank">
+          <Link
+            href="https://www.instagram.com/koushalshrma/"
+            aria-label="Instagram"
+            target="_blank"
+          >
             <Icons.instagram className="size-5" />
           </Link>
         </Button>
         <Button variant="outline" size="icon" asChild>
-          <Link href="https://x.com/KOSLSHARMA" aria-label="Twitter" target="_blank">
+          <Link
+            href="https://x.com/KOSLSHARMA"
+            aria-label="Twitter"
+            target="_blank"
+          >
             <Icons.twitter className="size-5" />
           </Link>
         </Button>

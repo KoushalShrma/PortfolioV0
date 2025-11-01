@@ -70,9 +70,10 @@ export const Project = ({ project, index }: TProps) => {
       <p className="text-muted-foreground mb-2 mt-1">{description}</p>
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech) => {
-          const isStatusTag = tech.toLowerCase().includes('developing') || 
-                             tech.toLowerCase().includes('deploying') ||
-                             tech.toLowerCase().includes('still in');
+          const isStatusTag =
+            tech.toLowerCase().includes('developing') ||
+            tech.toLowerCase().includes('deploying') ||
+            tech.toLowerCase().includes('still in');
           return (
             <span
               className={`rounded-full border px-3 py-1 text-sm ${
