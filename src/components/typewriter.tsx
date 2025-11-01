@@ -94,7 +94,7 @@ const Typewriter: React.FC<Props> = ({
   // Caret adapts to theme: white in dark mode, black in light mode
   return (
     <div
-      className={`flex min-h-16 items-center justify-center md:min-h-20`}
+      className={`flex min-h-16 items-center justify-center whitespace-nowrap md:min-h-20`}
       style={{ overflow: 'visible' }}
     >
       <span

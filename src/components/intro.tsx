@@ -92,14 +92,14 @@ export const Intro = () => {
         transition={{
           delay: 0.1,
         }}
-        className="flex flex-row gap-2"
+        className="flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:gap-2"
       >
-        <Button asChild size="lg">
+        <Button asChild size="lg" className="w-full sm:w-auto">
           <Link href="#contact">
             Get in touch <Icons.arrowRight className="ml-2 size-4" />
           </Link>
         </Button>
-        <Button variant="outline" size="lg" className="hidden sm:flex" asChild>
+        <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
           <a
             href="/cv/Koushal_Sharma_JavaDeveloper.pdf"
             target="_blank"
@@ -108,42 +108,44 @@ export const Intro = () => {
             Download CV <Icons.download className="ml-2 size-4" />
           </a>
         </Button>
-        <Button variant="outline" size="icon" asChild>
-          <Link
-            href="https://www.linkedin.com/in/koushalshrma"
-            aria-label="Linkedin"
-            target="_blank"
-          >
-            <Icons.linkedin className="size-5" />
-          </Link>
-        </Button>
-        <Button variant="outline" size="icon" asChild>
-          <Link
-            href="https://github.com/KoushalShrma"
-            aria-label="Github"
-            target="_blank"
-          >
-            <Icons.github className="size-5" />
-          </Link>
-        </Button>
-        <Button variant="outline" size="icon" asChild>
-          <Link
-            href="https://www.instagram.com/koushalshrma/"
-            aria-label="Instagram"
-            target="_blank"
-          >
-            <Icons.instagram className="size-5" />
-          </Link>
-        </Button>
-        <Button variant="outline" size="icon" asChild>
-          <Link
-            href="https://x.com/KOSLSHARMA"
-            aria-label="Twitter"
-            target="_blank"
-          >
-            <Icons.twitter className="size-5" />
-          </Link>
-        </Button>
+        <div className="flex justify-center gap-2">
+          <Button variant="outline" size="icon" asChild>
+            <Link
+              href="https://www.linkedin.com/in/koushalshrma"
+              aria-label="Linkedin"
+              target="_blank"
+            >
+              <Icons.linkedin className="size-5" />
+            </Link>
+          </Button>
+          <Button variant="outline" size="icon" asChild>
+            <Link
+              href="https://github.com/KoushalShrma"
+              aria-label="Github"
+              target="_blank"
+            >
+              <Icons.github className="size-5" />
+            </Link>
+          </Button>
+          <Button variant="outline" size="icon" asChild>
+            <Link
+              href="https://www.instagram.com/koushalshrma/"
+              aria-label="Instagram"
+              target="_blank"
+            >
+              <Icons.instagram className="size-5" />
+            </Link>
+          </Button>
+          <Button variant="outline" size="icon" asChild>
+            <Link
+              href="https://x.com/KOSLSHARMA"
+              aria-label="Twitter"
+              target="_blank"
+            >
+              <Icons.twitter className="size-5" />
+            </Link>
+          </Button>
+        </div>
       </motion.div>
     </section>
   );

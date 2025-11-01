@@ -202,6 +202,35 @@ export async function POST(request: NextRequest) {
       lastUserMessage.content.toLowerCase().includes(keyword)
     );
 
+    // Check if the user is asking for CV/Resume
+    const cvKeywords = [
+      'resume',
+      'cv',
+      'curriculum vitae',
+      'download resume',
+      'download cv',
+      'see resume',
+      'see cv',
+      'view resume',
+      'view cv',
+      'get resume',
+      'get cv',
+      'show resume',
+      'show cv',
+    ];
+
+    const needsCV = cvKeywords.some((keyword) =>
+      lastUserMessage.content.toLowerCase().includes(keyword)
+    );
+
+    if (needsCV && lastUserMessage.role === 'user') {
+      return NextResponse.json({
+        message:
+          "📄 Of course! You can download Koushal's CV by clicking the button below. It includes his complete profile, skills, projects, and experience.",
+        needsCV: true,
+      });
+    }
+
     if (needsContact && lastUserMessage.role === 'user') {
       return NextResponse.json({
         message:

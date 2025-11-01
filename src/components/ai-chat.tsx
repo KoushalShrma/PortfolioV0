@@ -35,6 +35,7 @@ export const AIChat = () => {
     email: '',
     reason: '',
   });
+  const [lastMessageNeedsCV, setLastMessageNeedsCV] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatInputRef = useRef<HTMLInputElement>(null);
 
@@ -82,7 +83,18 @@ export const AIChat = () => {
 
       const data = await response.json();
 
-      if (data.needsContact) {
+      if (data.needsCV) {
+        setLastMessageNeedsCV(true);
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: data.message,
+            timestamp: new Date(),
+          },
+        ]);
+      } else if (data.needsContact) {
+        setLastMessageNeedsCV(false);
         setShowContactForm(true);
         setMessages((prev) => [
           ...prev,
@@ -93,6 +105,7 @@ export const AIChat = () => {
           },
         ]);
       } else {
+        setLastMessageNeedsCV(false);
         setMessages((prev) => [
           ...prev,
           {
@@ -389,6 +402,29 @@ export const AIChat = () => {
                         <div className="size-2 animate-bounce rounded-full bg-purple-600 [animation-delay:0.4s]"></div>
                       </div>
                     </div>
+                  </motion.div>
+                )}
+
+                {/* CV Download Button */}
+                {lastMessageNeedsCV && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex justify-start"
+                  >
+                    <button
+                      onClick={() => {
+                        window.open(
+                          '/cv/Koushal_Sharma_JavaDeveloper.pdf',
+                          '_blank'
+                        );
+                        setLastMessageNeedsCV(false);
+                      }}
+                      className="flex items-center gap-3 rounded-2xl border border-white/20 bg-gradient-to-r from-rose-700 to-pink-600 px-6 py-4 text-white shadow-xl backdrop-blur-md transition-all hover:from-rose-800 hover:to-pink-700"
+                    >
+                      <Icons.download className="size-5" />
+                      <span className="font-medium">Download Resume</span>
+                    </button>
                   </motion.div>
                 )}
 
