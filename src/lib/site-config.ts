@@ -24,8 +24,6 @@ export const siteConfig = {
     'Full Stack Enthusiast',
     'Open to opportunities',
   ],
-  url: env.SITE_URL || 'https://yash-kapure.vercel.app',
-  googleSiteVerificationId:
-    env.GOOGLE_SITE_VERIFICATION_ID ||
-    'zjseZ18pLQ6Tg4nvpJJkRVevf7dK4QzbpzMuZNCKNYQ',
+  url: env.SITE_URL || 'https://koushal.me',
+  googleSiteVerificationId: env.GOOGLE_SITE_VERIFICATION_ID || '',
 };

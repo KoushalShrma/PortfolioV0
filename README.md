@@ -1,10 +1,10 @@
 ## 🎉 Project Overview
 
-Yash Kapure's personal portfolio website built using Next.js, Tailwind CSS and Framer-motion. A Full Stack Developer with 3+ years of experience specializing in React.js, Next.js, Node.js, and MERN/MEVN stack.
+Koushal Sharma's personal portfolio website built using Next.js, TypeScript, Tailwind CSS, and Framer Motion. A Java Developer (Fresher) with training and certifications in Java, Spring Boot, and related technologies. Features AI-powered chat assistant, contact form integration, and responsive design.
 
 ## 📍 Live
 
-Link to the live version: [https://yashkapure.dev](https://yashkapure.dev)
+Link to the live version: [https://koushal.me](https://koushal.me)
 
 ## 💾 Installation
 
@@ -17,8 +17,10 @@ $ npm install
 Then create .env file:
 
 ```bash
-SITE_URL='https://example.com' ## Required to generate sitemap by next-sitemap
-RESEND_API_KEY='your_resend_api_key' ## Required to send email by resend
+SITE_URL='https://koushal.me' ## Required to generate sitemap by next-sitemap
+GROQ_API_KEY='your_groq_api_key' ## Required for AI chat functionality
+GMAIL_USER='your_gmail@gmail.com' ## Required for contact form
+GMAIL_PASS='your_gmail_app_password' ## Gmail app password for sending emails
 ```
 
 Then start the project on the local server with the command:
@@ -29,13 +31,33 @@ $ npm run dev
 
 and open http://localhost:3000 to see this app.
 
-## 🔧 Tech/framework used
+## 🔧 Tech Stack
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Framer-motion
-- React-hook-form
-- Resend
+- **Frontend:** Next.js 15, React 19, TypeScript
+- **Styling:** Tailwind CSS, Framer Motion
+- **AI Integration:** Groq SDK (Llama 3.3 70B)
+- **Email:** Nodemailer with Gmail SMTP
+- **Forms:** React Hook Form, Zod validation
+- **Deployment:** Vercel
+- **Other:** next-themes, lucide-react, react-icons
 
-If you encounter a problem, write to this e-mail address: [yashkapure06@gmail.com](mailto:yashkapure06@gmail.com)
+## ✨ Features
+
+- 🤖 AI-powered chat assistant with context-aware responses
+- 📧 Contact form with email integration
+- 📄 CV download functionality through AI chat
+- 🎨 Dark/Light mode toggle
+- 📱 Fully responsive design
+- ⚡ Optimized performance with Next.js 15
+- 🔍 SEO optimized with structured data
+
+## 👤 Author
+
+**Koushal Sharma**
+- Email: [koushalshrma@gmail.com](mailto:koushalshrma@gmail.com)
+- Portfolio: [https://koushal.me](https://koushal.me)
+- GitHub: [https://github.com/KoushalShrma](https://github.com/KoushalShrma)
+
+---
+
+**Note:** Original template by Yash Kapure, customized and enhanced by Koushal Sharma.
