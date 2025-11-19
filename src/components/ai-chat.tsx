@@ -217,17 +217,17 @@ export const AIChat = () => {
             className="fixed inset-x-0 bottom-5 z-50 mx-auto sm:bottom-10"
           >
             <div className="container mx-auto px-4">
-              <div className="sm:bg-background/80 mx-auto flex max-w-[800px] items-center gap-2 sm:rounded-full sm:border sm:px-2 sm:py-3 sm:backdrop-blur-sm">
+              <div className="mx-auto flex max-w-[800px] items-center gap-2 px-2 py-0">
                 <button
                   onClick={() => setIsExpanded(true)}
-                  className="text-muted-foreground hover:text-foreground flex w-full items-center gap-3 rounded-full bg-white/80 px-6 py-3 backdrop-blur-sm transition-colors sm:bg-transparent sm:backdrop-blur-none dark:bg-gray-900/80"
+                  className="flex w-full items-center gap-3 rounded-full bg-black/80 px-6 py-3 text-white shadow-md ring-1 ring-black/10 transition-colors hover:bg-gray-900/90 dark:bg-white/80 dark:text-black dark:ring-white/10 dark:hover:bg-gray-100/90"
                 >
-                  <Icons.sparkles className="size-5 shrink-0" />
-                  <span className="text-sm">
+                  <Icons.sparkles className="size-5 shrink-0 text-rose-600" />
+                  <span className="bg-gradient-to-r from-rose-700 to-pink-600 bg-clip-text text-sm text-transparent">
                     Ask me anything about Koushal...
                   </span>
                   <div className="ml-auto flex items-center gap-2">
-                    <kbd className="bg-muted hidden rounded border px-2 py-1 text-xs sm:inline-block">
+                    <kbd className="hidden rounded bg-gradient-to-r from-rose-700 to-pink-600 bg-clip-text px-2 py-1 text-xs text-transparent sm:inline-block">
                       Click to chat
                     </kbd>
                   </div>
@@ -496,9 +496,9 @@ export const AIChat = () => {
               className="fixed inset-x-0 bottom-5 z-[70] mx-auto sm:bottom-10"
             >
               <div className="container mx-auto px-4">
-                <div className="sm:bg-background/80 mx-auto flex max-w-[800px] items-center gap-2 sm:rounded-full sm:border sm:px-2 sm:py-3 sm:backdrop-blur-sm">
+                <div className="mx-auto flex max-w-[800px] items-center gap-2 px-2 py-0">
                   {!showContactForm ? (
-                    <div className="flex w-full items-center gap-3 rounded-full bg-white/90 px-6 py-3 backdrop-blur-md sm:bg-transparent sm:backdrop-blur-none dark:bg-gray-900/90">
+                    <div className="flex w-full items-center gap-3 rounded-full bg-black/80 px-6 py-3 text-white shadow-md ring-1 ring-black/10 transition-colors hover:bg-gray-900/90 dark:bg-white/80 dark:text-black dark:ring-white/10 dark:hover:bg-gray-100/90">
                       <div className="relative flex-1">
                         <input
                           ref={chatInputRef}
