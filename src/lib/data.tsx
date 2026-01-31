@@ -26,6 +26,30 @@ export const links = [
 
 export const projectsDataRaw = [
   {
+    image: '/images/learnnow.png',
+    title: 'LEARNnow - Your Personal Knowledge Revolution',
+    description:
+      'LEARNnow is a comprehensive platform that transforms chaotic YouTube browsing into structured, personalized learning journeys. Combining AI mentorship, gamification, and career roadmaps, LEARNnow helps users learn smarter, stay disciplined, and showcase their progress. Features include AI-powered course generation, interactive learning from YouTube videos, progress tracking with gamification, personalized career roadmaps, and actionable analytics—all designed to bring structure and motivation to your educational journey.',
+    technologies: [
+      'Java',
+      'Spring Boot',
+      'Next.js',
+      'React.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'RESTful API',
+      'YouTube API',
+      'MySQL',
+      'JWT Authentication',
+      'Deployed',
+    ],
+    links: {
+      preview: 'https://lernnow.vercel.app/',
+      github: 'https://github.com/KoushalShrma/LERNnow',
+      githubApi: '',
+    },
+  },
+  {
     image: '/images/initspring.png',
     title: 'InitSpring - AI-Powered Spring Boot Initializr',
     description:
@@ -43,6 +67,7 @@ export const projectsDataRaw = [
       'H2 Database',
       'MySQL',
       'PostgreSQL',
+      'Deployed',
     ],
     links: {
       preview: 'https://initspring.vercel.app/',
@@ -66,34 +91,11 @@ export const projectsDataRaw = [
       'Tailwind CSS',
       'MongoDB',
       'Express.js',
+      'Deployed',
     ],
     links: {
       preview: 'https://koushal.tech/email-agent',
       github: '',
-      githubApi: '',
-    },
-  },
-  {
-    image: '/images/learnnow.png',
-    title: 'LEARNnow - Your Personal Knowledge Revolution',
-    description:
-      'LEARNnow is a comprehensive platform that transforms chaotic YouTube browsing into structured, personalized learning journeys. Combining AI mentorship, gamification, and career roadmaps, LEARNnow helps users learn smarter, stay disciplined, and showcase their progress. Features include AI-powered course generation, interactive learning from YouTube videos, progress tracking with gamification, personalized career roadmaps, and actionable analytics—all designed to bring structure and motivation to your educational journey.',
-    technologies: [
-      'Java',
-      'Spring Boot',
-      'Next.js',
-      'React.js',
-      'TypeScript',
-      'Tailwind CSS',
-      'RESTful API',
-      'YouTube API',
-      'MySQL',
-      'JWT Authentication',
-      'Still in Developing Phase',
-    ],
-    links: {
-      preview: 'https://github.com/KoushalShrma/LERNnow',
-      github: 'https://github.com/KoushalShrma/LERNnow',
       githubApi: '',
     },
   },

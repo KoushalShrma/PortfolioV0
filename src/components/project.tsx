@@ -44,42 +44,45 @@ export const Project = ({ project, index }: TProps) => {
       custom={index}
       className="flex flex-col rounded border p-5 "
     >
-      {/* <Link
-        href={links.github}
+      <Link
+        href={links.preview}
         aria-label={title}
         target="_blank"
         className="overflow-hidden rounded"
-      > */}
-      {image.startsWith('http') ? (
-        <img
-          src={image}
-          alt={title}
-          className="w-full rounded transition-transform hover:scale-105"
-        />
-      ) : (
-        <Image
-          src={image}
-          alt={title}
-          width={1200}
-          height={675}
-          className="w-full rounded transition-transform hover:scale-105"
-        />
-      )}
-      {/* </Link> */}
+      >
+        {image.startsWith('http') ? (
+          <img
+            src={image}
+            alt={title}
+            className="w-full rounded transition-transform hover:scale-105"
+          />
+        ) : (
+          <Image
+            src={image}
+            alt={title}
+            width={1200}
+            height={675}
+            className="w-full rounded transition-transform hover:scale-105"
+          />
+        )}
+      </Link>
       <h3 className="mt-3 text-xl font-medium">{title}</h3>
       <p className="text-muted-foreground mb-2 mt-1">{description}</p>
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech) => {
-          const isStatusTag =
+          const isInProgressTag =
             tech.toLowerCase().includes('developing') ||
             tech.toLowerCase().includes('deploying') ||
             tech.toLowerCase().includes('still in');
+          const isDeployedTag = tech.toLowerCase() === 'deployed';
           return (
             <span
               className={`rounded-full border px-3 py-1 text-sm ${
-                isStatusTag
+                isInProgressTag
                   ? 'animate-pulse border-orange-500 bg-orange-500/10 font-semibold text-orange-600 dark:border-orange-400 dark:bg-orange-400/10 dark:text-orange-400'
-                  : ''
+                  : isDeployedTag
+                    ? 'border-green-500 bg-green-500/10 font-semibold text-green-600 dark:border-green-400 dark:bg-green-400/10 dark:text-green-400'
+                    : ''
               }`}
               key={tech}
             >
